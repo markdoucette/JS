@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>48 - Form Validation - JavaScript</title>
+<link rel="stylesheet" type="text/css" href="styles/jw1_day_04_styles.css">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+
+<body class="f_36">
+
+<div class="wrapper">
+
+<div class="box_main">
+
+<header>
+  <h1>Form Validation - HTML5</h1>
+</header>
+<section>
+  <article>
+    <p>For more customized validation we can use JavaScript to validate our forms. HTML5 or JavaScript form validation should never be your sole form of form validation as it can be easily changed and or overridden by any user. Server validation of data sent to a server should always be performed in addition to HTML5 or JavaScript validation.</p>
+    <p>Below is an example of a basic form using JavaScript form validation. Notice the required attributes located on the input fields.</p>
+  
+  <h2>Form Validated with JavaScript</h2>
+  
+  <form action="53_form_thank_you.html" method="post" class="form-02" novalidate>
+  	
+    <div class="errors">
+    </div><!-- end errors -->
+  
+    <label for="name">Name: </label>
+    <input type="text" id="name" name="name">
+    
+    <label for="email">Email: </label>
+    <input type="email" id="email" name="email">
+    
+    <label for="password" class="form_label">Password:</label>
+    <input name="password" id="password" type="password">
+        
+    <label for="passconf" class="form_label">Confirm Password:</label>
+    <input name="passconf" id="passconf" type="password">
+    <h3>Please select at least one position</h3>
+    <fieldset class="position">
+    
+    <legend>Position</legend>
+      
+       <input type="checkbox" id="pos-student" name="position[]" value="student">
+      <label for="pos-student">Student</label>  
+     
+      <input type="checkbox" id="pos-instructor" name="position[]" value="instructor">
+      <label for="pos-instructor">Instructor</label>
+      
+      <input type="checkbox" id="pos-administrator" name="position[]" value="administrator">
+      <label for="pos-administrator">Administrator</label>
+    
+    </fieldset>
+    
+    <label for="comments">Comments: </label>
+    <textarea id="comments" name="comments"></textarea>
+    
+    <input type="submit" value="Submit">
+  
+  </form>
+  
+  
+  
+
+  </article>  
+</section>
+
+</div><!-- end box_main -->
+
+</div><!-- end wrapper -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="scripts/jq_form_validation.js"></script>
+</body>
+</html>

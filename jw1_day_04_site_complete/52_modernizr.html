@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>52 - Modernizr</title>
+<link rel="stylesheet" type="text/css" href="styles/jw1_day_04_styles.css">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="scripts/modernizr.custom.95655.js"></script>
+</head>
+
+<body class="f_20">
+
+<div class="wrapper">
+
+<div class="box_main">
+
+<header>
+  <h1>Modernizr</h1>
+</header>
+<section>
+  <article>
+    <p>Modernizr is a Javascript library which detects features that a browser support</p>
+    
+    <p>You do not need to know JavaScript to use some of the features of modernizr, but knowing JavaScript is needed to utilize feature detection in your scripts.</p>
+    
+    <p>One thing that Modernizr can do is add classes to the html tag of your web page that change depending on whether or not a browsers supports a feature.</p>
+    
+    <p>Below is a code sample of the classes that Modernizr adds to the html tag of the latest version of Chrome and to IE8.</p>
+    
+    <h3>Classes added to the HTML tag by Modernizr for Chrome Desktop</h3>
+    
+    <pre class="language-markup"><code>
+&lt;html class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
+    </code></pre>
+    
+    <h3>Classes added to the HTML tag by Modernizr for IE 8</h3>
+    
+    <pre class="language-markup"><code>
+&lt;html class=" js no-flexbox no-flexboxlegacy no-canvas no-canvastext no-webgl no-touch no-geolocation postmessage no-websqldatabase no-indexeddb hashchange no-history draganddrop no-websockets no-rgba no-hsla no-multiplebgs no-backgroundsize no-borderimage no-borderradius no-boxshadow no-textshadow no-opacity no-cssanimations no-csscolumns no-cssgradients no-cssreflections no-csstransforms no-csstransforms3d no-csstransitions fontface generatedcontent no-video no-audio no-localstorage no-sessionstorage no-webworkers no-applicationcache no-svg no-inlinesvg no-smil no-svgclippaths">
+    </code></pre>
+    
+    <p>Modernizr can include the HTML5 shiv/shim (this adds support to IE8 and below to HTML5 tags) so you do not need to include the HTML5 shiv/shim if you are using Modenizr.</p>
+    
+    <h2>Use Modernizr to Load a Graphic for a Logo for Older Browsers</h2>
+    
+    <p>This works because Modernizr creates "no-{feature}" classes that are added to the html tag. We can then write CSS that differs depending on which class is in the html tag.</p>
+    
+    <p>Below is sample code of two CSS style rules that target the same element but apply different styles depending on whether or not the "no-boxshadow" class has been added to the html tag or not. If the "no-boxshadow" tag was added to the html tag than Modernizr has determined that the browser does not support the css "box-shadow"  property.</p>
+    
+    <h4>CSS for ".logo" if Box Shadow is Supported</h4>
+    
+    <pre class="language-css"><code>
+/* This style will apply for browsers that support 
+the box-shadow css property */
+.f_20 .logo {
+	font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", sans-serif;
+	font-size: 30px;
+	text-align: center;
+	-wekit-box-shadow: 10px 10px 5px #888;
+	-moz-box-shadow: 10px 10px 5px #888;
+	box-shadow: 10px 10px 5px #888;
+	width: 315px;
+	height: 119px;
+	padding: 0;
+	line-height: 119px;
+	border: 1px solid #000;
+	margin: 50px auto;	
+}
+    </code></pre>
+    
+    <h4>CSS for ".logo" if Box Shadow is Not Supported</h4>
+    
+    <pre class="language-css"><code>
+/* Since modernizr adds a class called "no-boxshadow" to the body tag of browsers 
+that do not support the box-shadow css property...this rule will run only for browsers that do not support the box-shadow css property */
+.no-boxshadow .f_20 .box_21 .logo {
+	background-image: url(../images/bg_awesome_designs_logo.png);
+	background-repeat: no-repeat;
+	height: 119px;
+	padding: 0;
+	border: none;
+	line-height: 101px;
+	text-indent: -10px;
+}
+    </code></pre>
+
+<div class="box box_19">
+
+  <div class="box box_20">
+  	<h3>Logo for Modern Browsers - Created with CSS3 Styles</h3>
+    <h3 class="logo">Awesome Designs</h3>
+  
+  </div><!-- end box_17 -->
+  
+  <div class="box box_21">
+  	<h3>Logo for Older Browsers - Created with an Image</h3>
+  	<h3 class="logo">Awesome Designs</h3>
+  </div><!-- end box_18 -->
+    
+</div><!-- end of box_16 -->
+
+	<h2>Using Modernizr to conditionally load scripts</h2>
+
+   <p>Modernizr can include the yepnope JavaScript library which allows you to conditionally load JavaScript and CSS files depending on whether or not a feature in a browser is supported.</p>
+   
+   <p>When you build your version of Modernizr on the <a href="http://modernizr.com/download/">Modernizr download page</a> make sure you select the Modernizr.load option.</p>
+   
+   <p>Below we will either load a script which utilizes native CSS animations to animate a heading, or we will load a polyfill script that will use jQuery animations to animate a heading in browsers that do not support CSS animations.</p>
+   
+   <div class="box box_22">
+   
+   <h2>Animated Heading</h2>
+   
+   <button class="btn_26">Animate Heading</button>  
+   
+   </div><!-- end box_22 -->
+   
+   <h3>Code Sample using the Modnerizer.load() Method</h3>
+   
+   <pre class="language-javascript"><code>
+// Use Modernizr.load method to conditionally load scripts depending
+// on whether or not a browser supports a certain feature or not...
+
+// The following code tests whether or not the browser supports
+// CSS animations and loads either a script that uses CSS animations or
+// a script that uses jQuery animations if the browser does not 
+// support CSS animations
+
+Modernizr.load({
+  test: Modernizr.cssanimations,
+  yep : 'scripts/css_animation_support.js',
+  nope: 'scripts/no_css_animation_support.js'
+});   
+   </code></pre>
+
+  
+  </article>  
+</section>
+
+</div><!-- end box_main -->
+
+</div><!-- end wrapper -->
+<script src="scripts/prism.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="scripts/feature_detection_with_modernizr.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>48 - Form Validation - HTML5</title>
+
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+
+<body class="f_36">
+
+<div class="wrapper">
+
+<div class="box_main">
+
+<header>
+  <h1>Form Validation - HTML5</h1>
+</header>
+<section>
+  <article>
+    <p>With HTML5 you can provide basic form validation with out the use of JavaScript. By using the "required" attribute on input field tags the browser will require the user to fill in the field. The browser can also perform basic form validation for inputs with the type of email, to make sure the user enters a valid email address.</p>
+    <p>Below is an example of a basic form using only HTML5 form validation. Notice the required attributes located on the input fields.</p>
+  
+  <h2>HTML5 Form</h2>
+  
+  <form action="53_form_thank_you.html" method="post" class="form-01">
+  
+    <label for="name">Name: </label>
+    <input type="text" id="name" name="name" required>
+    
+    <label for="email">Email: </label>
+    <input type="email" id="email" name="email" required>
+    
+    <label for="comments">Comments: </label>
+    <textarea id="comments" name="comments" required></textarea>
+  
+  <input type="submit" value="Submit">
+  
+  </form>
+  
+  
+  
+
+  </article>  
+</section>
+
+</div><!-- end box_main -->
+
+</div><!-- end wrapper -->
+</body>
+</html>

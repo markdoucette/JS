@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>65 - jQuery - Forms Validate</title>
+<link rel="stylesheet" type="text/css" href="styles/styles_forms_validation_plugin/styles.css">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+
+<body class="f_65">
+
+<div class="wrapper">
+
+<div class="box_main">
+
+<header>
+  <h1>jQuery - Validate Plugin</h1>
+</header>
+
+<main>
+
+  <div class="box_form box_form_01">
+
+    <form action="53_form_thank_you.html" id="form_01" class="form_01">
+  
+      <label for="name" class="form_label">Name: </label>	
+      <input name="name" id="name" placeholder="Name" type="text" required>
+    
+      <label for="email" class="form_label">Email: </label>
+      <input name="email" id="email" placeholder="E-mail Address" type="text" required>
+    
+      <label for="url" class="form_label">Web Site: </label>
+      <input name="url" id="url" placeholder="Web Site URL" type="text" required>
+    
+      <label for="password" class="form_label">Password:</label>
+      <input name="password" id="password" type="password" required>
+      
+       <label for="passconf" class="form_label">Confirm Password:</label>
+       <input name="passconf" id="passconf" type="password" required>
+    
+      <input type="submit" value="Submit">
+    
+    </form>
+
+  </div><!-- end box_form_01 -->
+
+</main>
+  
+</div><!-- end box_main -->
+
+</div><!-- end wrapper -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="scripts/jquery.validate.min.js"></script>
+<script src="scripts/jq_form_validation_with_validate_plugin.js"></script>
+</body>
+</html>

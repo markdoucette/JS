@@ -1,0 +1,83 @@
+@charset "utf-8";
+/* CSS Document */
+
+.box_form {
+	position: relative;
+}
+
+.box_form_02 {
+	width: 420px;	
+}
+
+.box_form_02 h2 {
+	margin-bottom: 30px;	
+}
+
+.form_01 .form_label,
+.form_02 .form_label {
+	display: block;
+	margin-top: 15px;
+	margin-bottom: 3px;	
+}
+
+.form_02 .form_label {
+	margin-bottom: 10px;	
+}
+
+.form_02 textarea {
+	display: block;
+	width: 420px;
+	height: 120px;	
+}
+
+.form_01 .form_label:first-of-type {
+	margin-top: 0;	
+}
+
+.form_01 input[type="submit"],
+.form_02 input[type="submit"] {
+	margin-top: 20px;
+	display: block;	
+}
+
+.form_02 input[type="submit"] {
+	margin-top: 16px;
+	margin-right: 0;
+	float: right;
+}
+
+.form_01 label.valid,
+.form_01 label.error {
+	margin-left: 5px;	
+}
+
+.form_01 label.valid {
+	background-image: url(../../images/valid.png);
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	
+	/* text replacement code below from:
+	
+	http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement
+	
+	*/
+	
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.form_01 label.error {
+	color: #FF0000;
+	font-weight: bold;	
+}
+
+.p_message_count {
+	float: left;	
+}
+
+.character_count {
+	font-weight: bold;	
+}
+

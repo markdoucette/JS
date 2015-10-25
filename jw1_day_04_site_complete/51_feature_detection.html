@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>48 - Form Validation - HTML5</title>
+<link rel="stylesheet" type="text/css" href="styles/jw1_day_04_styles.css">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script>
+
+// Feature detection script for SVG
+var svgSupport = svgSupportTest();
+
+function svgSupportTest() {
+  if(document.createElementNS && document.createElementNS('http://www.w3.org/2000/svg',"svg")){
+	return true;  
+  }else{
+	return false;	  
+  };
+} // end SVG support test function
+
+</script>
+</head>
+
+<body class="f_36">
+
+<div class="wrapper">
+
+<div class="box_main">
+
+<header>
+  <h1>Feature Dectection</h1>
+</header>
+<section>
+  <article>
+    <p>With JavaScript we can determine what browser the page is loading on and run a script based on what browser is loaded. The code sample below will display (via an alert box) the user agent string of the browser that is running the web page. It does this by calling the "userAgent" property of the navigator object. The navigator object is built in to JavaScript</p>
+    
+    <pre class="language-javascript"><code>
+// display the user agent string of the browser running the web page
+alert(navigator.userAgent);
+    </code></pre>
+    
+    <p>Browser detection is generally frowned upon, and in most cases should not be used.</p>
+    
+    <h3>Feature Detection</h3>
+    
+    <p>Instead of determining what browser is in use and then running different code, a better approach is to determine whether or not a browser supports certain "features" and then run different code depending on whether or not the browser supports a certain feature.</p>
+    
+    <p>Below is a code a sample that will run different code depending if the browser supports the "svg" image format.</p>
+    
+     <p>Insert this script in the head section of the web page. This code determines whether or not the browser supports the "svg" format</p>
+     
+     <pre class="language-javascript"><code>
+// Feature detection script for SVG
+var svgSupport = svgSupportTest();
+
+function svgSupportTest() {
+  if(document.createElementNS && document.createElementNS('http://www.w3.org/2000/svg',"svg")){
+	return true;  
+  }else{
+	return false;	  
+  };
+} // end SVG support test function     
+     </code></pre>
+     
+     <p>Insert this script before the closing body tag. This script will replace all the "svg" images with "png" images if the browser does not support the "svg" image format.</p>
+     
+     <pre class="language-javascript"><code>
+// Replace all the SVG images with PNG images if the browser fails
+// The SVG support test that is run in the head section of the web page
+// only run if the SVG support test returned false
+if(!svgSupport){
+	// selects all the images that are in the SVG format
+	svgImgs = $('img[src$="svg"]');
+	$('body').addClass('no_svg'); // allows targeting non-svg supporting browsers with custom CSS styles
+	// loops through all the svg images and changes the end of their src
+	// attribute value to ".png"
+	svgImgs.each(function(){
+		$(this).attr('src', $(this).attr('src').replace(/\.svg/, '.png'));
+	});
+};    
+     </code></pre>
+  
+  	<h3>Example</h3>
+    
+    <p>The image below will either use an "svg" formatted image if the browser supports the "svg" format, or the image will be replaced (using JavaScript) with a "png" formatted image if the browser does not support "svg".</p>
+    
+    <div class="image-container">
+    	<img src="images/generic_logo.svg" alt="generic logo">	
+    </div><!-- end image-container -->
+  
+  </article>  
+</section>
+
+</div><!-- end box_main -->
+
+</div><!-- end wrapper -->
+<script src="scripts/prism.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="scripts/feature_detection.js"></script>
+</body>
+</html>
